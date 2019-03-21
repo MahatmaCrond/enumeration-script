@@ -13,7 +13,7 @@ uses linux system notifications as it finishes each script.
 It will create a directory structure that consists of just the last portion of the subnet you're scanning. 
 For example, if you're scanning 5 hosts in the 192.168.0.1/24 subnet, the directory tree could look like this:
 
-115/
+127/
 112/
 92/
 84/
@@ -21,16 +21,22 @@ For example, if you're scanning 5 hosts in the 192.168.0.1/24 subnet, the direct
 
 Using the .115 host as an example, each folder will be outputs of each scan:
 
-$ cd 115/
+$ cd 127/
 
-$ ls
+$ ls -la
+
+
+scripts_127
+
+tcp_full_127
+
+tcp_quick_127
+
+udp_127
+
+Version
 
 ![example](https://i.imgur.com/JqnJh6x.png)
-
-tcp_quick_115
-tcp_quick_115
-udp_115
-Version
 
 
 ## Details
