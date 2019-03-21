@@ -25,15 +25,16 @@ $ cd 115/
 
 $ ls
 
-all_ports_grep
-scripts_73
-tcp_full_73
-tcp_quick_73
-udp_73
+![example](https://i.imgur.com/JqnJh6x.png)
+
+tcp_quick_115
+tcp_quick_115
+udp_115
+Version
+
 
 ## Details
 
-- The script/version scan will only scan the open ports of the host. This may or may not speed up your scan, but I've found that it works faster.
 - You can modify this script to take things to the next level, but running a nikto or directory scan for hosts with an open port 80/443 
 
 
