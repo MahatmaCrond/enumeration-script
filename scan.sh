@@ -13,7 +13,7 @@ for host in $(cat ips.txt); do
 	usleep 1075000
 	nmap -sS -n -Pn -p- -v --reason -sV -oN $(echo $host |cut -d "." -f4)/tcp_full_$(echo $host |cut -d "." -f4) $host
 	usleep 1075000
-	nmap -n -Pn -sS -O -sC -sV -v -oN $(echo $host |cut -d "." -f4)/scripts_$(echo $host |cut -d "." -f4) $host
+	nmap -n -Pn -p -sS -O -sC -sV -v -oN $(echo $host |cut -d "." -f4)/scripts_$(echo $host |cut -d "." -f4) $host
 	usleep 1075000
 	cat $(echo $host |cut -d "." -f4)/scripts_$(echo $host |cut -d "." -f4) |grep '^[0-9]' |grep open |cut -d" " -f 4- > $(echo $host |cut -d "." -f4)/Versions
 	#Add a feature that greps ports and runs more scans if they are open like HTTP, etc.
