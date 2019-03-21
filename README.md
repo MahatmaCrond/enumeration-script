@@ -41,7 +41,7 @@ Version
 
 ## Details
 
-- You can modify this script to take things to the next level, but running a nikto or directory scan for hosts with an open port 80/443 
+- You can modify this script to take things to the next level, but running a nikto, searchsploit or directory scan for hosts with an open port 80/443.
 
 
 
