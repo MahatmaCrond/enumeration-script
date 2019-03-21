@@ -11,7 +11,7 @@ uses linux system notifications as it finishes each script.
 
 ## Output organization
 It will create a directory structure that consists of just the last portion of the subnet you're scanning. 
-For example, if you're scanning 5 hosts in the 192.168.0.1/24 subnet, the directory tree could look like this:
+For example, if you're scanning 5 hosts in the 10.10.10.1/24 subnet, the directory tree could look like this:
 
 127/
 112/
@@ -19,7 +19,7 @@ For example, if you're scanning 5 hosts in the 192.168.0.1/24 subnet, the direct
 84/
 60/
 
-Using the .115 host as an example, each folder will be outputs of each scan:
+Using the .127 host as an example, each folder will be outputs of each scan:
 
 $ cd 127/
 
