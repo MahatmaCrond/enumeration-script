@@ -7,18 +7,16 @@ counter=0
 
 for host in $(cat ips.txt); do
 	mkdir $(echo $host |cut -d "." -f4)
-	notify-send "Beginning TCP quick scan of host" "$(echo $host)"
+	counter=$((counter + 1))
+	notify-send "Beginning TCP quick scan of host" "$(echo $host) | $counter of 4";
 	nmap --top-ports 1000 -sS -T4 target -oN $(echo $host |cut -d "." -f4)/tcp_quick_$(echo $host |cut -d "." -f4) $host
 	usleep 1075000
 	nmap -sS -n -Pn -p- -v --reason -sV -oN $(echo $host |cut -d "." -f4)/tcp_full_$(echo $host |cut -d "." -f4) $host
 	usleep 1075000
-	grep '^[0-9]' $(echo $host |cut -d "." -f4)/tcp_full_$(echo $host |cut -d "." -f4) | cut -d "/" -f 1 > \
- 	$(echo $host |cut -d "." -f4)/all_ports_grep
-	nmap -n -Pn -sS -O -sC -sV -v -p `tr '\n' , <$(echo $host |cut -d "." -f4)/all_ports_grep` -oN \
-	$(echo $host |cut -d "." -f4)/scripts_$(echo $host |cut -d "." -f4) $host
+	nmap -n -Pn -sS -O -sC -sV -v -oN $(echo $host |cut -d "." -f4)/scripts_$(echo $host |cut -d "." -f4) $host
 	usleep 1075000
+	cat $(echo $host |cut -d "." -f4)/scripts_$(echo $host |cut -d "." -f4) |grep '^[0-9]' |grep open |cut -d" " -f 4- > $(echo $host |cut -d "." -f4)/Versions
 	#Add a feature that greps ports and runs more scans if they are open like HTTP, etc.
 	nmap -sU -n -Pn -vv --reason --open -oN $(echo $host |cut -d "." -f4)/udp_$(echo $host |cut -d "." -f4) $host
-	notify-send "Completed scan of host" "$(echo $host)"
-	usleep 1075000
+	#notify-send -u low "Completed scan of host" "$(echo $host)"
 done
