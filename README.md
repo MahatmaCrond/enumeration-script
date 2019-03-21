@@ -24,6 +24,7 @@ Using the .127 host as an example, each folder will be outputs of each scan:
 $ cd 127/
 
 $ ls -la
+
 ------------------------
 
 scripts_127
