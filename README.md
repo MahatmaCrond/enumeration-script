@@ -1,5 +1,5 @@
 # oscp-enumeration-script
-Scanner that runs enumeration scripts while you do other things, made for the OSCP exam
+Scanner that runs enumeration scripts while you do other things, made for the OSCP exam or for use on CTF's. Not recommended to run on live networks as-is.
 
 ## Notes
 This script is designed to do Nmap scans of a list of target hosts. It takes an hour or so to complete. To keep you notified of its progress, it 
