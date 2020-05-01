@@ -5,9 +5,10 @@ Scanner that runs enumeration scripts while you do other things, made for the OS
 This script is designed to do Nmap scans of a list of target hosts. It takes an hour or so to complete. To keep you notified of its progress, it 
 uses linux system notifications as it finishes each script. 
 
-- Must have libnotify-bin installed // apt-get install libnotify-bin 
+- Must have libnotify-bin installed // apt-get install libnotify-bin.
 - If you don't want to use notifications, just remove the line from the script.
-- Before you begin, create a file called ips.txt with a host to scan on each line
+- Before you begin, create a file called ips.txt with a host to scan on each line.
+- If the UDP scan is taking too long, you should just kill the script.
 
 ## Output organization
 It will create a directory structure that consists of just the last portion of the subnet you're scanning. 
